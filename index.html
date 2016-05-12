@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>My MarkDown Editor</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <body class="container-fluid">
+
+  <nav class="block-header">
+    <h1 class="first-title inset-text">My MarkDown Editor</h1>
+  </nav>
+
+  <section class="row">
+    <textarea class="col-md-6 full-height" id="pad">Write your text here..</textarea>
+    <div class="col-md-6 full-height" id="markdown"></div>
+  </section>
+
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script>
+  	<script src="js/script.js"></script>
+    
+    <script>
+  // Détection du support
+  if(typeof sessionStorage!='undefined') {
+  if('pad' in sessionStorage) {
+    alert("Message récupéré");
+    document.getElementById('pad').value = sessionStorage.getItem('pad');
+  }
+}   
+  else {
+  alert("sessionStorage n'est pas supporté");
+}
+</script>
+    
+    
+</body>
+
+</html>
